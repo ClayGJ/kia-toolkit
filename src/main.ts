@@ -17,7 +17,7 @@ export default async function () {
       {
         name: "📙 COVER",
         node: "PAGE",
-        title: "Cover",
+        title: "Cover"
       },
       { name: "-------------------------------", title: "", node: "PAGE" },
       {
@@ -40,21 +40,21 @@ export default async function () {
         description: "Dev Handoff",
       },
       { name: "-------------------------------", title: "", node: "PAGE" },
-      {
+       {
         name: "🔒 CLIENT REVIEW",
         node: "PAGE",
         title: "Client Review",
         description: "Page for Cleint Reviews",
       },
-      {
+             {
         name: "    ↳ 🟢 - xx.xx.xxxx",
         node: "PAGE",
         title: "Status and Date",
         description: "Status and Date for Reviews",
       },
-
+         
       { name: "-------------------------------", title: "", node: "PAGE" },
-
+       
       {
         name: "📈 UX",
         node: "PAGE",
@@ -109,46 +109,46 @@ export default async function () {
         name: "🖼️ UI KIT",
         node: "PAGE",
         title: "UI KIT",
-        description: "UI Kit",
+        description: "UI Kit"
       },
       {
         name: "    ↳ Components",
         node: "PAGE",
         title: "Components",
-        description: "Local Components",
+        description: "Local Components"
       },
       {
         name: "    ↳ Templates",
         node: "PAGE",
         title: "Templates",
-        description: "Templates",
+        description: "Templates"
       },
       { name: "-------------------------------", node: "PAGE" },
       {
         name: "🗂️ ANCILLARY",
         node: "PAGE",
         title: "Ancillary",
-        description: "Ancillary",
+        description: "Ancillary"
       },
       {
         name: "    ↳ Future",
         node: "PAGE",
         title: "Future",
-        description: "Future",
+        description: "Future"
       },
       {
         name: "    ↳ Archive",
         node: "PAGE",
         title: "Archive",
-        description: "Archive",
+        description: "Archive"
       },
       { name: "-------------------------------", node: "PAGE" },
       {
         name: "⚪️🟡🟠🔴🟢 <- Use for Status",
         node: "PAGE",
         title: "Status",
-        description: "Status Symbols",
-      },
+        description: "Status Symbols"
+      }
     ];
 
     // Show a notification
@@ -179,14 +179,12 @@ export default async function () {
       coverComponent = instance;
     }
 
-    // Title component
+    // Title component 
     let statusComponent: ComponentNode | null = null;
 
     async function getStatusComponent() {
       const statusComponentKey = "9067156dbb63fc0409f674307d168d39c1ca2e78"; // Replace this with the Key for your title component.
-      const instance = await figma.importComponentByKeyAsync(
-        statusComponentKey
-      );
+      const instance = await figma.importComponentByKeyAsync(statusComponentKey);
       statusComponent = instance;
     }
 
@@ -195,9 +193,7 @@ export default async function () {
 
     async function getVersionComponent() {
       const versionComponentKey = "38d0e7c41e2bd196f438a3c96f2edcc6f323b1be"; // This is an example component, use this block as a reference when for importing additional components
-      const instance = await figma.importComponentByKeyAsync(
-        versionComponentKey
-      );
+      const instance = await figma.importComponentByKeyAsync(versionComponentKey);
       versionComponent = instance;
     }
 
@@ -228,16 +224,14 @@ export default async function () {
       linkComponent = instance;
     }
 
-    // Example of a component to be imported
-    let statusKeyComponent: ComponentNode | null = null;
+        // Example of a component to be imported
+        let statusKeyComponent: ComponentNode | null = null;
 
-    async function getStatusKeyComponent() {
-      const statusKeyComponent = "947a0e33331b416c82b7275e058eb4d5dde3f045"; // This is an example component, use this block as a reference when for importing additional components
-      const instance = await figma.importComponentByKeyAsync(
-        statusKeyComponent
-      );
-      linkComponent = instance;
-    }
+        async function getStatusKeyComponent() {
+          const statusKeyComponent = "947a0e33331b416c82b7275e058eb4d5dde3f045"; // This is an example component, use this block as a reference when for importing additional components
+          const instance = await figma.importComponentByKeyAsync(statusKeyComponent);
+          linkComponent = instance;
+        }
 
     // The following section is contained within a Promise, which means it only runs when the above components and fonts are available.
     const defaultPage = figma.currentPage;

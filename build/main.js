@@ -301,17 +301,13 @@
       let statusComponent = null;
       async function getStatusComponent() {
         const statusComponentKey = "9067156dbb63fc0409f674307d168d39c1ca2e78";
-        const instance = await figma.importComponentByKeyAsync(
-          statusComponentKey
-        );
+        const instance = await figma.importComponentByKeyAsync(statusComponentKey);
         statusComponent = instance;
       }
       let versionComponent = null;
       async function getVersionComponent() {
         const versionComponentKey = "38d0e7c41e2bd196f438a3c96f2edcc6f323b1be";
-        const instance = await figma.importComponentByKeyAsync(
-          versionComponentKey
-        );
+        const instance = await figma.importComponentByKeyAsync(versionComponentKey);
         versionComponent = instance;
       }
       let devComponent = null;
@@ -335,9 +331,7 @@
       let statusKeyComponent = null;
       async function getStatusKeyComponent() {
         const statusKeyComponent2 = "947a0e33331b416c82b7275e058eb4d5dde3f045";
-        const instance = await figma.importComponentByKeyAsync(
-          statusKeyComponent2
-        );
+        const instance = await figma.importComponentByKeyAsync(statusKeyComponent2);
         linkComponent = instance;
       }
       const defaultPage = figma.currentPage;
