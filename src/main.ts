@@ -183,7 +183,7 @@ export default async function () {
     let statusComponent: ComponentNode | null = null;
 
     async function getStatusComponent() {
-      const statusComponentKey = "9067156dbb63fc0409f674307d168d39c1ca2e78"; // Replace this with the Key for your title component.
+      const statusComponentKey = "947a0e33331b416c82b7275e058eb4d5dde3f045"; // Replace this with the Key for your title component.
       const instance = await figma.importComponentByKeyAsync(statusComponentKey);
       statusComponent = instance;
     }
@@ -224,14 +224,6 @@ export default async function () {
       linkComponent = instance;
     }
 
-        // Example of a component to be imported
-        let statusKeyComponent: ComponentNode | null = null;
-
-        async function getStatusKeyComponent() {
-          const statusKeyComponent = "947a0e33331b416c82b7275e058eb4d5dde3f045"; // This is an example component, use this block as a reference when for importing additional components
-          const instance = await figma.importComponentByKeyAsync(statusKeyComponent);
-          linkComponent = instance;
-        }
 
     // The following section is contained within a Promise, which means it only runs when the above components and fonts are available.
     const defaultPage = figma.currentPage;
@@ -263,7 +255,34 @@ Promise.all([
 
   // Switch to the Cover page and insert component
   // Switch to cover page and add cover instance.
-const coverPage = createdPages.find(page => page.name === "📙 COVER");
+  const statusPage = createdPages.find((page) => page.name === "⚪️🟡🟠🔴🟢 <- Use for Status");
+  const versionPage = createdPages.find((page) => page.name === "    ↳ Version History");
+  const devPage = createdPages.find((page) => page.name === "    ↳ Dev Handoff");
+  const coverPage = createdPages.find((page) => page.name === "\u{1F4D9} COVER");
+
+  if (statusPage && statusComponent) {
+    figma.currentPage = statusPage;
+    const statusInstance = statusComponent.createInstance();
+    statusPage.appendChild(statusInstance);
+    statusInstance.x = 0;
+    statusInstance.y = 0;
+  }
+
+  if (versionPage && versionComponent) {
+    figma.currentPage = versionPage;
+    const versionInstance = versionComponent.createInstance();
+    versionPage.appendChild(versionInstance);
+    versionInstance.x = 0;
+    versionInstance.y = 0;
+  }
+
+  if (devPage && devComponent) {
+    figma.currentPage = devPage;
+    const devInstance = devComponent.createInstance();
+    devPage.appendChild(devInstance);
+    devInstance.x = 0;
+    devInstance.y = 0;
+  }
 if (coverPage) {
   figma.currentPage = coverPage;
   
