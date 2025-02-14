@@ -1,0 +1,19 @@
+{
+  "api": "1.0.0",
+  "editorType": [
+    "figma"
+  ],
+  "id": "design-toolkit",
+  "name": "Design Toolkit",
+  "main": "build/main.js",
+  "ui": "build/ui.js",
+  "relaunchButtons": [
+    {
+      "name": "Design Toolkit",
+      "command": "designToolkit"
+    }
+  ],
+  "permissions": [
+    "currentuser"
+  ]
+}
