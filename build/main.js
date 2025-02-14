@@ -300,7 +300,7 @@
       }
       let statusComponent = null;
       async function getStatusComponent() {
-        const statusComponentKey = "9067156dbb63fc0409f674307d168d39c1ca2e78";
+        const statusComponentKey = "947a0e33331b416c82b7275e058eb4d5dde3f045";
         const instance = await figma.importComponentByKeyAsync(statusComponentKey);
         statusComponent = instance;
       }
@@ -328,12 +328,7 @@
         const instance = await figma.importComponentByKeyAsync(linkComponentKey);
         linkComponent = instance;
       }
-      let statusKeyComponent = null;
-      async function getStatusKeyComponent() {
-        const statusKeyComponent2 = "947a0e33331b416c82b7275e058eb4d5dde3f045";
-        const instance = await figma.importComponentByKeyAsync(statusKeyComponent2);
-        linkComponent = instance;
-      }
+
       const defaultPage = figma.currentPage;
       console.log("Stored default page:", defaultPage.name, defaultPage.id);
       Promise.all([
@@ -357,7 +352,34 @@
           createdPages.push(newPage);
         });
         console.log("%cPages built", "color:green");
+        const statusPage = createdPages.find((page) => page.name === "⚪️🟡🟠🔴🟢 <- Use for Status");
+        const versionPage = createdPages.find((page) => page.name === "    ↳ Version History");
+        const devPage = createdPages.find((page) => page.name === "    ↳ Dev Handoff");
         const coverPage = createdPages.find((page) => page.name === "\u{1F4D9} COVER");
+
+        if (statusPage && statusComponent) {
+          figma.currentPage = statusPage;
+          const statusInstance = statusComponent.createInstance();
+          statusPage.appendChild(statusInstance);
+          statusInstance.x = 0;
+          statusInstance.y = 0;
+        }
+  
+        if (versionPage && versionComponent) {
+          figma.currentPage = versionPage;
+          const versionInstance = versionComponent.createInstance();
+          versionPage.appendChild(versionInstance);
+          versionInstance.x = 0;
+          versionInstance.y = 0;
+        }
+  
+        if (devPage && devComponent) {
+          figma.currentPage = devPage;
+          const devInstance = devComponent.createInstance();
+          devPage.appendChild(devInstance);
+          devInstance.x = 0;
+          devInstance.y = 0;
+        }
         if (coverPage) {
           figma.currentPage = coverPage;
           if (coverComponent) {
