@@ -3,7 +3,11 @@
   "editorType": [
     "figma"
   ],
-  "id": "design-toolkit",
+  "id": "1474173712654605945",
+  "documentAccess": "none",
+  "networkAccess": {
+    "allowedDomains": ["none"]
+  },
   "name": "Design Toolkit",
   "main": "build/main.js",
   "ui": "build/ui.js",

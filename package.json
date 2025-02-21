@@ -18,9 +18,11 @@
     "editorType": [
       "figma"
     ],
+    "id": "1474173712654605945",
     "name": "Design Toolkit",
     "main": "src/main.ts",
     "ui": "src/ui.tsx",
+    "networkAccess": { "allowedDomains": ["none"] },
     "relaunchButtons": {
       "designToolkit": {
         "name": "Design Toolkit",
@@ -29,5 +31,6 @@
       }
     },
     "permissions": ["currentuser"]
+
   }
 }
